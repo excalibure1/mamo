@@ -3,6 +3,10 @@ from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the MAMO Backend"}
+
 @app.get("/healthz")
 def healthz():
     return {"status": "ok"}
